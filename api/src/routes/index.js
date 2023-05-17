@@ -5,6 +5,8 @@ const { Router } = require('express');
 
 const { filterDataDogs } = require('../controllers/filterDataDogs');
 const { getDogsById } = require('../controllers/getDogsById');
+const { getTemperamentData } = require('../controllers/getTemperamentData');
+const { createNewDog } = require('../controllers/createNewDog');
 
 const router = Router();
 
@@ -16,10 +18,13 @@ router.get("/dogs", (req,res) => {
 
 router.get("/dogs/:id", (req,res) => {
     getDogsById(req,res);
-})
+});
 
 router.get('/temperaments', (req,res) => {
+    getTemperamentData(req,res);
+});
 
-})
-
+router.post('/dogs', (req,res) => {
+    createNewDog(req,res);
+});
 module.exports = router;
