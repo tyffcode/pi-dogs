@@ -12,5 +12,3 @@ export const searchById = (id) => {  // <== el nombre de la variable que recibe 
         });
     };
 };
-
-
